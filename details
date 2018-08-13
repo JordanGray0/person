@@ -1,0 +1,85 @@
+Form
+
+// declarations
+private ParkType parktype;
+private IKiosk _gen = new GenKioskWrap();
+private IKiosk _student = new StudentKioskWrap();
+private IKiosk _staff = new StaffKioskWrap();
+
+
+private void genRadBtn_CheckedChanged(object sender, EventArgs e){
+        {
+            parktype = ParkType.General;
+        }
+}
+
+
+private btnCalculate {
+	decimal number = convert.ToDecimal(groupBox.Text);
+	if(parktype == ParkType.General){
+		costLabel.Text = _gen.FindParkingAmount(hours).ToString("c");
+
+	} else if {
+
+	} else if {
+
+	}
+}
+
+//genkioskwrap
+public class GenKioskWrap : IKiosk
+
+private GeneralParkingKiosk _generalParkingKiosk;
+
+	public GenKioskWrap()
+        {
+            _generalParkingKiosk = new GeneralParkingKiosk();
+        }
+
+	
+	public decimal HoursParked
+        {
+            get => default(decimal);
+            set
+            {
+            }
+        }
+
+
+	public decimal FindParkingAmount(decimal hours)
+        {
+            return _generalParkingKiosk.FindGeneralParkingAmount(hours);
+        }	
+	
+	//GeneralParkingKiosk
+	public class GeneralParkingKiosk
+    	{
+        public decimal FindGeneralParkingAmount(decimal hours)
+        {
+        	return hours * 2;	
+        }
+    }
+
+//--
+// example 
+public override double CalculateCost(double hours)
+        {
+            _hours = hours;
+            if (_hours <= 10)
+            {
+                double dollaramount = 2;
+                return dollaramount;
+            } else
+            {
+                double dollaramount = (2 +(Math.Ceiling(_hours)-10) * 2);
+                return dollaramount;
+            }
+            
+        }
+		
+public interface IKiosk
+    {
+        decimal HoursParked { get; }
+
+        decimal FindParkingAmount(decimal hours);
+    }
