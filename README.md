@@ -25,9 +25,9 @@ public ConcreteSubject()
             }
         }
 	
-	 int.TryParse(textBox1.Text, out _propertyX);
+	 int.TryParse(textBox1.Text, out _propertyX);.
 
-public partial class ConcreteObserver1 : Form, iObserver, iDisplay
+public partial class ConcreteObserver1 : Form, iObserver, iDisplay .
 private iSubject _subject;
 private int _output;
 public ConcreteObserver1(iSubject s)
@@ -47,6 +47,6 @@ public void Update(int x)
             outputlabelconcrete.text = _output.ToString();
         }	
 	
-program.cs
+.program.cs.
 Application.Run(new ConcreteSubject());
 	
