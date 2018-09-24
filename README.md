@@ -1,51 +1,52 @@
-<p># person
+iDisplay - Display	
+iSubject	NotifyObservers	RegisterObservers(o)	RemoveObservers(o)
+iObserver - Update	
 
-<p>Form
+concrete subject _observers _output Output , ConcreteSubject NotifyObservers RegisterObservers, RemoveObservers
+ConcreteObserver1 ConcreteObserver1 Display Update
 
-<p>// declarations
-<p>private ParkType parktype;
-<p>private IKiosk _gen = new GenKioskWrap();
-<p>private IKiosk _student = new StudentKioskWrap();
-<p>private IKiosk _staff = new StaffKioskWrap();
-
-
-<p>private void genRadBtn_CheckedChanged(object sender, EventArgs e){
-       <p> {
-     <p>       parktype = ParkType.General;
-    <p>    }
-<p>}
-
-
-private btnCalculate {
-	decimal number = convert.ToDecimal(groupBox.Text);
-	if(parktype == ParkType.General){
-		costLabel.Text = _gen.FindParkingAmount(hours).ToString("c");
-
-	} else if {
-
-	} else if {
-
-	}
-}
-<p 
-public class GenKioskWrap : IKiosk
-	public decimal FindParkingAmount(decimal hours)
+public partial class ConcreteSubject : Form, iSubject
+private List<iObserver> _observers = new List<iObserver>();
+public ConcreteSubject()
         {
-            return _generalParkingKiosk.FindGeneralParkingAmount(hours);
+            InitializeComponent();
+            ConcreteObserver1 CO1 = new ConcreteObserver1(this);
+            CO1.Show();
         }	
-
-public class GeneralParkingKiosk
-    {
-        public decimal FindGeneralParkingAmount(decimal hours)
+	public int Output
         {
-            return hours * 2;
+            get
+            {
+                return _output;
+            }
+            set
+            {
+                _output = value;
+            }
         }
-    }
-		
-public interface IKiosk
-    {
-        decimal HoursParked { get; }
+	
+	 int.TryParse(textBox1.Text, out _propertyX);
 
-        decimal FindParkingAmount(decimal hours);
-    }
-</p>
+public partial class ConcreteObserver1 : Form, iObserver, iDisplay
+private iSubject _subject;
+private int _output
+public ConcreteObserver1(iSubject s)
+        {
+            InitializeComponent();
+            _subject = s;
+        }
+	
+public void Display()
+        {
+            ConcreteOutputLabel1.Text = _output.ToString();
+        }	
+	
+public void Update(int x)
+        {
+            _output = x;
+            outputlabelconcrete.text = _output.ToString();
+        }	
+	
+program.cs
+Application.Run(new ConcreteSubject());
+	
