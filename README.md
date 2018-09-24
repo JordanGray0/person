@@ -1,12 +1,12 @@
-iDisplay - Display	
-iSubject	NotifyObservers	RegisterObservers(o)	RemoveObservers(o)
-iObserver - Update	
+iDisplay - Display.	
+iSubject	NotifyObservers	RegisterObservers(o)	RemoveObservers(o).
+iObserver - Update.	
 
-concrete subject _observers _output Output , ConcreteSubject NotifyObservers RegisterObservers, RemoveObservers
-ConcreteObserver1 ConcreteObserver1 Display Update
+concrete subject _observers _output Output , ConcreteSubject NotifyObservers RegisterObservers, RemoveObservers.
+ConcreteObserver1 ConcreteObserver1 Display Update.
 
-public partial class ConcreteSubject : Form, iSubject
-private List<iObserver> _observers = new List<iObserver>();
+public partial class ConcreteSubject : Form, iSubject.
+private List<iObserver> _observers = new List<iObserver>();.
 public ConcreteSubject()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ public ConcreteSubject()
 
 public partial class ConcreteObserver1 : Form, iObserver, iDisplay
 private iSubject _subject;
-private int _output
+private int _output;
 public ConcreteObserver1(iSubject s)
         {
             InitializeComponent();
